@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GSAP Cursor Follower</title>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+/* ================= FOLLOWER ================= */
+.follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.follower__content {
+  color: #fff;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.follower__inner__bottom,
+.follower__inner__top {
+  position: absolute;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.follower__inner__bottom {
+  background: red;
+  opacity: 1;
+}
+
+.follower__inner__top {
+  background: beige;
+  opacity: 0;
+}
+
+/* ================= TARGET BOXES ================= */
+.followerchangetest {
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  background-color: rebeccapurple;
+  border: 3px dashed blue;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Hide follower when not hovering page */
+body:not(:hover) .follower {
+  display: none;
+}
+
+@media (prefers-reduced-motion) {
+  .follower {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="followerchangetest" data-follower-text="Clickaroo">Box 1</div>
+<div class="followerchangetest" data-follower-text="Another one">Box 2</div>
+<div class="followerchangetest" data-follower-text="Unique!">Box 3</div>
+
+<div class="follower">
+  <div class="follower__inner__bottom"></div>
+  <div class="follower__inner__top"></div>
+  <span class="follower__content"></span>
+</div>
+
+<script>
+/* ================= FOLLOW CURSOR ================= */
+gsap.set(".follower", { xPercent: -50, yPercent: -50 });
+
+const xTo = gsap.quickTo(".follower", "x", { duration: 0.6, ease: "power3.out" });
+const yTo = gsap.quickTo(".follower", "y", { duration: 0.6, ease: "power3.out" });
+
+window.addEventListener("mousemove", e => {
+  xTo(e.clientX);
+  yTo(e.clientY);
+});
+
+/* ================= FOLLOWER ANIMATION ================= */
+const followerText = document.querySelector('.follower__content');
+
+const followerAnim = gsap.timeline({
+  paused: true,
+  defaults: { ease: "power2.out" }
+});
+
+followerAnim
+  .to('.follower__inner__bottom', {
+    scale: 10,
+    backgroundColor: '#F6EFEB',
+    duration: 0.15
+  }, 0)
+  .to('.follower__inner__top', {
+    scale: 10,
+    backgroundColor: '#FF5555',
+    opacity: 1,
+    duration: 0.15
+  }, 0.1)
+  .to('.follower__content', {
+    height: "32px",
+    duration: 0.2
+  }, 0.15);
+
+/* ================= HOVER EVENTS ================= */
+document.querySelectorAll('.followerchangetest').forEach(item => {
+
+  item.addEventListener('mouseenter', () => {
+    followerText.textContent = item.dataset.followerText || "Click";
+    followerAnim.timeScale(1).play(0);
+  });
+
+  item.addEventListener('mouseleave', () => {
+    followerAnim.timeScale(1.5).reverse();
+  });
+
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input
+        {
+            padding:10px;
+            width:300px;
+            border: none;   
+            margin-top: 20px;
+        }
+        input[type="text"]
+        {
+            background-color: cornflowerblue;
+            color:red;
+        }
+        input[type="password"]
+        {
+            background-color: darkcyan;
+            color: white;
+        }
+        input[type="text"]::placeholder
+        {
+            color:rgb(232, 252, 7);
+            font-size: 20px;
+        }
+        input[type="password"]::placeholder
+        {
+            color:lightcoral;
+            font-size: 22px;
+        }
+        input:focus
+        {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="Enter username">
+    <br>
+    <input type="password" name="" id="" placeholder="Enter password">
+    
+</body>
+</html>

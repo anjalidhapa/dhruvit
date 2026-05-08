@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="itemList"></ul>
+    
+    <script>
+        let itemList = document.getElementById("itemList");
+
+        let items = ["Item 1", "Item 2", "Item 3"];
+        items.forEach(item => {
+            let listItem = document.createElement("li");
+            listItem.textContent = item;
+            listItem.addEventListener("click",function(){
+                listItem.remove();
+            })
+            itemList.appendChild(listItem);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('https://t3.ftcdn.net/jpg/01/31/72/52/360_F_131725232_ido9zMyBNtui0VWa895IeUyKBQBqnTNM.jpg') no-repeat center center/cover;
+            color: white;
+            height: 700px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: red;
+        }
+
+        .data {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: calc(100vh - 80px);
+            padding: 0 50px;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .data h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .data p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .data button {
+            height: 50px;
+            width: 120px;
+            font-size: 16px;
+            background: white;
+            color: black;   
+            border: none;
+            border-radius: 10px;
+        }
+
+        .data button:hover {
+            background: black;
+            color: white;
+        }
+
+
+
+        .scroll-section {
+            background: #f8efdf;
+            padding: 70px 5%;
+            color: #000;
+        }
+
+        .scroll-section h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .card {
+            width: 23%;
+            padding: 20px;
+        }
+
+        .card img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+
+
+        .choose-us {
+            margin-top: 60px;
+            background: #4b2f1b;
+            color: white;
+            display: flex;
+            padding: 60px 5%;
+        }
+
+        .choose-left {
+            width: 40%;
+            padding-right: 20px;
+        }
+
+        .choose-left h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .choose-left p {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .choose-left button {
+            padding: 12px 30px;
+            border-radius: 25px;
+            background: white;
+            color: #4b2f1b;
+            border: none;
+            font-weight: bold;
+        }
+
+        .choose-img {
+            width: 60%;
+        }
+
+        .choose-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+
+
+        .offer {
+            display: flex;
+            padding: 60px 5%;
+            background: #eddfce;
+        }
+
+        .offer-left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .offer-left img {
+            width: 70%;
+            height: 120%;
+            border-radius: 20px;
+        }
+
+        .offer-right {
+            width: 50%;
+            padding-top: 40px;
+        }
+
+        .offer-right h3 {
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .offer-right h1 {
+            font-size: 45px;
+            margin: 10px 0;
+        }
+
+        .offer-right p {
+            width: 80%;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .offer-right button {
+            background: #4b2f1b;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 25px;
+            border: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Coffee</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <section class="data">
+        <h1>Start Your Day With A Fresh Coffee</h1>
+        <p>Coffee is a popular and beloved beverage enjoyed by people around the world.</p>
+        <button>Order Now</button>
+    </section>
+
+    <section class="scroll-section">
+
+        <h2>Features</h2>
+
+        <div class="feature-box">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/ee/84/3b/ee843ba0149017ccf6618d8c4fc82250.jpg">
+                <h3>Espresso</h3>
+                <p>Strong bold coffee with rich aroma.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://img.freepik.com/premium-vector/heart-latte-art-coffee-cup_760214-8109.jpg">
+                <h3>Latte</h3>
+                <p>Smooth espresso mixed with milk.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/f6/3d/f0/f63df0c054cbfea383824aa41afda07c.jpg">
+                <h3>Latte</h3>
+                <p>Creamy balanced flavour.</p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://www.shutterstock.com/image-vector/steaming-hot-coffee-cup-doodle-600nw-2648429635.jpg">
+                <h3>Cold Brew</h3>
+                <p>Slow brewed chilled coffee.</p>
+            </div>
+        </div>
+
+
+        <div class="choose-us">
+
+            <div class="choose-left">
+                <h2>Why Choose Us?</h2>
+                <p>We serve premium quality coffee made from freshly roasted beans.</p>
+                <p>Experience delicious taste, aroma & freshness in every sip.</p>
+                <button>Explore More</button>
+            </div>
+
+            <div class="choose-img">
+                <img src="https://fikacoffee.com/cdn/shop/files/39-FikaCollection2.jpg?v=1750272560&width=5760">
+            </div>
+
+        </div>
+
+
+        <div class="offer">
+
+            <div class="offer-left">
+                <img
+                    src="https://thumbs.dreamstime.com/b/latte-art-heart-forms-cappuccino-slow-motion-effect-showcasing-barista-s-skillful-hands-cinematic-style-warm-coffe-379457126.jpg">
+            </div>
+
+            <div class="offer-right">
+                <h3>Opening Happy Hours</h3>
+                <h1>20% Off From 10 AM</h1>
+                <p>Get amazing discount on all premium coffee items during happy hours.</p>
+                <button>Grab Offer</button>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        opacity: 0.8;
+        font-family: 'Times New Roman', Times, serif;
+        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZGllbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1500&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    form {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        width: 320px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+
+    input:focus {
+        border-color: #7873f5;
+        box-shadow: 0 0 8px rgba(115, 110, 248, 0.4);
+    }
+
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(45deg, #7873f5, #42e695);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: linear-gradient(45deg, #42e695, #7873f5);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #error {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+</style>
+
+
+<body>
+
+    <form action="" onsubmit="return validateForm();">
+        <input type="text" id="first-name" placeholder="Enter First Name">
+        <br>
+        <input type="text" id="second-name" placeholder="Enter Last Name">
+        <br>
+        <input type="email" id="email" placeholder="Enter Your Email">
+        <br>
+        <input type="number" id="phone" placeholder="Enter Phone Number">
+        <br>
+        <input type="password" id="password" placeholder="Enter Password">
+        <br>
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+        <br>
+        <button type="submit">Submit</button>
+        <p id="error" style="color:red;"></p>
+    </form>
+
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById('first-name').value;
+            let lastName = document.getElementById('second-name').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirm-password').value;
+            let error = document.getElementById('error');
+
+            if (firstName === "") {
+                error.textContent = "Please fill First Name.";
+                return false;
+            }
+            if (lastName === "") {
+                error.textContent = "Please fill Last Name.";
+                return false;
+            }
+            if (email === "") {
+                error.textContent = "Please fill Email.";
+                return false;
+            }
+            if (phone === "") {
+                error.textContent = "Please fill Phone Number.";
+                return false;
+            }
+            if (phone.length !== 10) {
+                error.textContent = "Phone Number must be 10 digits.";
+                return false;
+            }
+            if (password === "") {
+                error.textContent = "Please fill Password.";
+                return false;
+            }
+            if (password.length <= 8) {
+                error.textContent = "Password must be at least 8 characters long.";
+                return false;
+            }
+            if (confirmPassword === "") {
+                error.textContent = "Please fill Confirm Password.";
+                return false;
+            }
+            if (password !== confirmPassword) {
+                error.textContent = "Password Not Match.";
+                return false;
+            }
+            error.textContent = "Form Submitted Successfully!";
+            error.style.color = "green";
+            alert("welcome " + firstName + " " + lastName);
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        input {
+            width: 70%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: #4facfe;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0077ff;
+        }
+
+        .weather-info {
+            margin-top: 15px;
+        }
+
+        .temp {
+            font-size: 28px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Weather App</h2>
+        <input type="text" id="city" placeholder="Enter City">
+        <button onclick="getWeather()">Search</button>
+
+        <div id="weatherResult" class="weather-info"></div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            let city = document.getElementById("city").value;
+            let apiKey = "8392cd77468be85fcb07a2290cc8844a";
+
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                let response = await fetch(url);
+                let data = await response.json();
+
+                if (data.cod === 200) {
+
+                    let sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString();
+                    let sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+
+                    document.getElementById("weatherResult").innerHTML = `
+                <h3>${data.name}, ${data.sys.country}</h3>
+                <div class="temp">${data.main.temp}°C</div>
+                <p>${data.weather[0].description}</p>
+                <p>Feels Like: ${data.main.feels_like}°C</p>
+                <p>Humidity: ${data.main.humidity}%</p>
+                <p>Wind: ${data.wind.speed} m/s</p>
+                <p>Sunrise: ${sunrise}</p>
+                <p>Sunset: ${sunset}</p>
+            `;
+
+                    changeBackground(data.weather[0].main);
+
+                } else {
+                    document.getElementById("weatherResult").innerHTML = "City not found!";
+                }
+
+            } catch (error) {
+                document.getElementById("weatherResult").innerHTML = "Error fetching data";
+            }
+        }
+
+        function changeBackground(weatherType) {
+            if (weatherType === "Clear") {
+                document.body.style.background = "linear-gradient(to right, #fceabb, #f8b500)";
+            }
+            else if (weatherType === "Clouds") {
+                document.body.style.background = "linear-gradient(to right, #bdc3c7, #2c3e50)";
+            }
+            else if (weatherType === "Rain") {
+                document.body.style.background = "linear-gradient(to right, #4e73df, #1cc88a)";
+            }
+            else {
+                document.body.style.background = "linear-gradient(to right, #4facfe, #00f2fe)";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            float: right;
+            position: relative;
+            right: 30px;
+            top: 30px;
+            padding: 10px;
+        }
+
+        .menu {
+            background-color: aquamarine;
+            height: 90vh;
+            padding: 15px;
+            width: 300px;
+            position: relative;
+            left: -400px;
+            transition: left 1s;
+        }
+
+        .menu h1 {
+            text-align: center;
+        }
+
+        .showmenu {
+            left: 0px;
+        }
+
+        .menu ol {
+            list-style: none;
+            width: 80%;
+            color: blue;
+            margin: 0px auto;
+            margin-top: 20px;
+        }
+
+        .menu ol li {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btn" onclick="showmenu()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="menu">
+        <h1>Dashboard</h1>
+        <ol>
+            <li>Home</li>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>About us</li>
+            <li>Contact us</li>
+        </ol>
+        <button onclick="showmenu()"><i class="fa-solid fa-x"></i>
+            Close menu</button>
+    </div>
+    <script>
+        function showmenu() {
+            let box = document.getElementsByClassName("menu");
+            box[0].classList.toggle("showmenu");
+        }
+    </script>
+</body>
+
+</html>

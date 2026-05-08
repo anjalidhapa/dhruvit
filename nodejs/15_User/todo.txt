@@ -1,0 +1,8 @@
+done:
+    user -> crud + auth + token
+
+todo:
+    post -> crud 
+        model, controller, routes, test
+        
+        middleware

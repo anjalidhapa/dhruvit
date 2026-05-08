@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+    </title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="todo-task">Enter task</label>
+            <input type="text" name="todo-task" id="todo-task" autofocus>
+        </div>
+        <button id="add-todo">add todo</button>
+    </form>
+
+    <script>
+        const addTodo = document.querySelector("#add-todo")
+
+        addTodo.addEventListener("click", async (e) => {
+
+            e.preventDefault()   // stop form reload
+
+            const task = document.querySelector("#todo-task").value
+            console.log(task)
+
+            const res = await fetch("http://localhost:4000/add", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ task })
+            })
+            console.log("res", res)
+            const data = await res.json()
+            console.log(data)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop By Cake</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+        }
+
+        .header span {
+            color: rgb(248, 43, 227);
+        }
+
+        .header button {
+            background: rgb(248, 43, 227);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .cake{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .cake-item img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cake-item h3 {
+            margin-top: 12px;
+            font-size: 16px;
+        }
+
+        @media (max-width:1024px) {
+            .cake{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width:768px) {
+            .cake{
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width:480px) {
+            .cake {
+                grid-template-columns: 1fr;
+            }
+
+            .cake-item img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Shop By <span>Cake</span></h1>
+            <button>View all</button>
+        </div>
+
+        <div class="cake">
+            <div class="cake-item">
+                <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Tall-and-Fancy-Cake-9-min-scaled-pr2q5nk8snomjr875pa6dqsqo2am0csfgkpnbldtxs.jpg"
+                    alt="">
+                <h3>TALL AND FANCY</h3>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/tall-and-fancy-pqouxp5t8lfjjchur84emwklu7ry19ddvnjqowky4w.jpg"
+                    alt="">
+                <h3>EXOTIC CAKES</h3>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Premium-Cakes-pqov0r4xg7m39q23x1nr8mtjcapw1uhzarvjua1vww.jpg"
+                    alt="">
+                <h3>PREMIUM CAKES</h3>
+            </div>
+
+            <div class="cake-item">
+                <img src="https://www.monginis.net/wp-content/uploads/elementor/thumbs/Designer-Cakes-pqov1whtsx6pgke17jjcacdth921gj264gkwygckb4.jpg"
+                    alt="">
+                <h3>DESIGNER CAKES</h3>
+            </div>
+        </div>
+
+    </div>
+</body> 
+
+</html>

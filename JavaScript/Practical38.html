@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="MyButton">Click Me!</button>
+        <h1 id="message">Hello!</h1>
+
+        <script>
+            let button = document.getElementById("MyButton");
+            let message = document.getElementById("message");
+            button.addEventListener("click", function () {
+                message.textContent = "Button Clicked!";
+                message.style.color = "green";
+                message.style.fontSize = "24px";
+            });
+            
+        </script>
+</body>
+</html>

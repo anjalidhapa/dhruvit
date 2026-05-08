@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let student = {
+        //     no: 1,
+        //     name: "dhruvit",
+        //     marks: 100,
+        //     show: function () {
+        //         return "welcome " + this.name;
+        //     }
+        // }
+        // document.write(student);
+        // let { no, name } = student;
+        // student.name = "abc";
+        // console.log(student);
+        // let greet = student.show();
+        // console.log(greet);
+
+        // console.log(name);
+
+        //  let book={
+        //     title:"JavaScript: The Good Parts",
+        //     author:"Douglas Crockford",
+        //     year:2008
+        //  };
+        // console.log(book);
+        // book.year=200;
+        // console.log(book);
+
+        // let book={
+        //     title: "JavaScript: The Good Parts",
+        //      author: "Douglas Crockford",
+        //      year: 2008
+        // }
+        // let{title,author}=book;
+        // console.log(title);
+        // console.log(author);
+
+        let bookWithMethod = {
+            title: "JavaScript: The Good Parts",
+            author: "Douglas Crockford",
+        logDetails:function(){
+            console.log(this.title+"by"+this.author);
+            
+        }
+        }
+        bookWithMethod.logDetails();
+
+    </script>
+
+</body>
+
+</html>

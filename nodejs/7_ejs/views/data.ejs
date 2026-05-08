@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        data file
+    </title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 100vh;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .card p span {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <div class="card-wrapper">
+        <% data.forEach(elem=> { %>
+            <div class="card">
+                <p><span>ID:</span>
+                    <%= elem.id %>
+                </p>
+                <p><span>App Name:</span>
+                    <%= elem.app_name || "app name" %>
+                </p>
+                <p><span>First Name:</span>
+                    <%= elem.first_name %>
+                </p>
+                <p><span>Email:</span>
+                    <%= elem.email %>
+                </p>
+                <p><span>IP Address:</span>
+                    <%= elem.ip_address %>
+                </p>
+            </div>
+
+            <% }) %>
+    </div>
+    <p>This content is rendered dynamically using EJS in Express.</p>
+</body>
+
+</html>

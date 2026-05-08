@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #main div {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        #main div:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 10px 0 5px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            min-height: 40px;
+        }
+
+        h2 {
+            color: #27ae60;
+            margin: 8px 0;
+        }
+
+        button {
+            background: #ff5a5f;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e0484c;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+
+        let products = [
+            {
+                id: 1,
+                name: "Chocolate Cake",
+                description: "Rich chocolate layered cake",
+                price: 300,
+                img: "https://www.fnp.com/images/pr/l/v20221205202813/cream-drop-chocolate-cake_1.jpg"
+            },
+            {
+                id: 2,
+                name: "Vanilla Cake",
+                description: "Soft vanilla sponge cake",
+                price: 280,
+                img: "https://thescranline.com/wp-content/uploads/2025/02/VANILLA-CAKE-25-S-01.jpg"
+            },
+            {
+                id: 3,
+                name: "Strawberry Cake",
+                description: "Fresh strawberry cream cake",
+                price: 320,
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3yMyBlML-kPsQ2PLDhJ7-F3RwNfhFQE33WA&s"
+            },
+            {
+                id: 4,
+                name: "Red Velvet",
+                description: "Classic red velvet cake",
+                price: 350,
+                img: "https://theobroma.in/cdn/shop/files/RedVelvetCakehalfkg.jpg?v=1711125747"
+            },
+            {
+                id: 5,
+                name: "Black Forest",
+                description: "Chocolate cake with cherries",
+                price: 330,
+                img: "https://jambubakers.com/wp-content/uploads/2024/01/Black-Forest-Cake-Heart-Shape.jpg"
+            },
+            {
+                id: 6,
+                name: "Pineapple Cake",
+                description: "Pineapple flavored cream cake",
+                price: 290,
+                img: "https://www.warmoven.in/cdn/shop/files/fathers-day-pineapple.jpg?v=1749832262&width=1080"
+            },
+            {
+                id: 7,
+                name: "Butterscotch Cake",
+                description: "Crunchy butterscotch delight",
+                price: 310,
+                img: ""
+            },
+            {
+                id: 8,
+                name: "Blueberry Cake",
+                description: "Blueberry topping cream cake",
+                price: 340,
+                img: "url8"
+            },
+            {
+                id: 9,
+                name: "Mango Cake",
+                description: "Seasonal mango special cake",
+                price: 300,
+                img: "url9"
+            },
+            {
+                id: 10,
+                name: "Coffee Cake",
+                description: "Coffee flavored creamy cake",
+                price: 325,
+                img: "url10"
+            }, {
+                id: 9,
+                name: "Mango Cake",
+                description: "Seasonal mango special cake",
+                price: 300,
+                img: "url9"
+            },
+            {
+                id: 10,
+                name: "Coffee Cake",
+                description: "Coffee flavored creamy cake",
+                price: 325,
+                img: "url10"
+            }
+
+
+        ];
+
+        products.forEach((item) => {
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            let h1 = document.createElement("h1");
+            let h2 = document.createElement("h2");
+            let p = document.createElement("p");
+            let btn = document.createElement("button");
+            img.src = item.img;
+            h1.textContent = item.name;
+            h2.textContent = item.price;
+            p.textContent = item.description;
+            btn.textContent = "Order Now";
+            div.appendChild(img);
+            div.appendChild(h1);
+            div.appendChild(p);
+            div.appendChild(h2);
+            div.appendChild(btn);
+            document.getElementById("main").appendChild(div);
+        })
+
+    </script>
+
+</body>
+
+</html>

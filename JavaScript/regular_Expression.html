@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function isValidEmail(email) {
+            return emailRegex.test(email);
+        }
+
+        let email1 = "test@example.com";
+        let email2 = "invalid-email";
+
+        if (isValidEmail(email1)) {
+            console.log(email1 + " is valid");
+        } else {
+            console.log(email1 + " is invalid");
+        }
+
+        if (isValidEmail(email2)) {
+            console.log(email2 + " is valid");
+        } else {
+            console.log(email2 + " is invalid");
+        }
+    </script>
+ </body>
+
+</html>

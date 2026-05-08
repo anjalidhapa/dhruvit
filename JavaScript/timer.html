@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+</head>
+<style>
+    .timerDisplay {
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: aqua;
+        border: 2px solid #333;
+    }
+</style>
+
+<body>
+    <div id="timerDisplay">00 : 00 : 00 : 00</div>
+    <button id="timerButton" onclick="startTimer()">Start</button>
+    <button id="stopButton" onclick="stopTimer()">Stop</button>
+    <button id="resetButton" onclick="resetTimer()">Reset</button>
+
+    <script>
+        let timerDisplay = document.getElementById("timerDisplay");
+        let timerButton = document.getElementById("timerButton");
+        let stopButton = document.getElementById("stopButton");
+        let resetButton = document.getElementById("resetButton");
+
+        let ms = 0, sec = 0, min = 0, hr = 0;
+        let timer;
+        const startTimer = () => {
+            timer = setInterval(() => {
+                // timerDisplay.innerHTML = `${hr} : ${min} : ${sec} : ${ms}`
+                timerDisplay.innerHTML = `${hr <= 9 ? "0" : ""}${hr} : ${min <= 9 ? "0" : ""}${min} : ${sec <= 9 ? "0" : ""}${sec} : ${ms <= 9 ? "0" : ""}${ms}`
+
+                if (ms > 60) {
+                    ms = 0
+                    sec++;
+                }
+                if (sec > 60) {
+                    sec = 0
+                    min++;
+                }
+                if (min > 60) {
+                    min = 0
+                    hr++;
+                }
+
+                ms++;
+            }, 10);
+        }
+        const stopTimer = () => {
+            clearInterval(timer)
+        }
+
+        const resetTimer = () => {
+            ms = 0
+            sec = 0
+            min = 0
+            hr = 0
+            stopTimer()
+            timerDisplay.innerHTML = `00 : 00 : 00 : 00`
+
+        }
+    </script>
+</body>
+
+</html>

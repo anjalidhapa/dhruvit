@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        ol {
+            margin-top: 20px;
+        }
+
+        li {
+            background: #f3f4f6;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        li button {
+            background: red;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        li button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input type="text" placeholder="Enter Task" id="task">
+        <button onclick="AddTask()">Add Task</button>
+        <ol id="tasklist"></ol>
+    </div>
+
+    <script>
+
+        let tasks = [];
+
+        // Load tasks on page load
+        window.onload = function () {
+            let storedTasks = localStorage.getItem("tasks");
+            if (storedTasks) {
+                tasks = JSON.parse(storedTasks);
+                tasks.forEach(task => createTask(task));
+            }
+        };
+
+        function AddTask() {
+            let input = document.getElementById("task");
+            let text = input.value.trim();
+
+            if (text === "") {
+                alert("Please Enter Task");
+                return;
+            }
+
+            let taskObj = {
+                text: text,
+                completed: false
+            };
+
+            tasks.push(taskObj);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+
+            createTask(taskObj);
+
+            input.value = "";
+        }
+
+        function createTask(taskObj) {
+            let list = document.getElementById("tasklist");
+
+            let li = document.createElement("li");
+            li.textContent = taskObj.text;
+
+            if (taskObj.completed) {
+                li.style.backgroundColor = "lightgreen";
+            }
+
+            let btn = document.createElement("button");
+            btn.textContent = "Delete";
+
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                li.remove();
+
+                tasks = tasks.filter(task => task.text !== taskObj.text);
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+            });
+
+            li.addEventListener("click", function () {
+                taskObj.completed = !taskObj.completed;
+
+                if (taskObj.completed) {
+                    li.style.backgroundColor = "lightgreen";
+                } else {
+                    li.style.backgroundColor = "#f3f4f6";
+                }
+
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+            });
+
+            li.appendChild(btn);
+            list.appendChild(li);
+        }
+
+    </script>
+
+</body>
+
+</html>

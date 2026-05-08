@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        background-color: #3c3a3a;
+        color: white;
+
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .navbar ol {
+        list-style-type: none;
+        display: flex;
+        gap: 30px;
+    }
+
+    .navbar ol li {
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .navbar ol li:hover {
+        color: #f4c542;
+    }
+
+    .logo .icon {
+        display: none;
+    }
+
+    .logo div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    @media screen and (max-width:480px) {
+
+        body {
+            background-color: aqua;
+        }
+
+        .navbar {
+            height: 50px;
+            display: block;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+            background-color: #3c3a3a;
+            color: white;
+        }
+
+        .navbar .menu {
+            display: none;
+            width: 100%;
+            background-color: #3c3a3a;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+            font-size: 10px;
+            padding: 0px 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .navbar ol {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .logo .icon {
+            display: block;
+        }
+
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <div>
+                <img src="https://imgk.timesnownews.com/story/New_Mahindra_Logo.png" alt="">
+                <h1>My Website</h1>
+            </div>
+            <i class="fa-solid fa-bars icon" onclick="showmenu()"></i>
+        </div>
+        <ol class="menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ol>
+
+    </div>
+    <script>
+
+
+        function showmenu() {
+            let menu = document.getElementsByClassName("menu");
+            if (menu[0].style.display == "none") {
+                menu[0].style.display = "block";
+            }
+            else {
+                menu[0].style.display = "none";
+            }
+
+        }
+    </script>
+</body>
+
+</html> 

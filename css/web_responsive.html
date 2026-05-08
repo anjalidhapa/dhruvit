@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+
+            margin: 0 auto;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('https://i.pinimg.com/1200x/e5/07/bd/e507bd4266c581640bb6593dae1802a6.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Cards Section */
+        .cards {
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .cards .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+
+        }
+
+        .card {
+            background-color: #84272751;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                background-color: lightgreen;
+            }
+
+            .cards .container {
+                display: block;
+                justify-content: space-between;
+                gap: 20px;
+                max-width: 100%;
+                margin: 0 auto;
+
+            }
+
+            .card {
+                background-color: #84272751;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                margin-top: 20px;
+            }
+
+            .navbar .nav-links {
+
+                display: none;
+            }
+
+            #icon {
+                display: block;
+            }
+
+            .logo {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">MyWebsite
+                <i id="icon" class="fa-solid fa-bars"></i>
+            </h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cards">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Website</h1>
+            <p>We provide amazing services to help you grow.</p>
+            <a href="#cards" class="btn">Explore Services</a>
+        </div>
+    </section>
+    <!-- Cards Section -->
+    <section class="cards" id="cards">
+        <div class="container">
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Build responsive and modern websites for your business.</p>
+            </div>
+            <div class="card">
+                <h3>UI/UX Design</h3>
+                <p>Create user-friendly interfaces and great experiences.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Marketing</h3>
+                <p>Boost your brand online and reach more customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <p>&copy; 2025 MyWebsite. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

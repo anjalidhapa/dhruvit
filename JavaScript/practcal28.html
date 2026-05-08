@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function testScope(){
+            let a = 5;
+            const b = 10;
+            console.log(a);
+            console.log(b);
+            
+            a = 15;
+            console.log(a);
+            
+        }
+        testScope();
+
+        if(true){
+            let x = 10;
+            console.log(x);
+            
+        }
+    </script>
+</body>
+</html>

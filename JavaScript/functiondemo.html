@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="input" placeholder="Enter you Name:">
+    <button onclick="show()">Submit</button>
+    <h1 id="h1">Heloo..</h1>
+    <script>
+        function show()
+        {
+            let heading = document.getElementById("h1");
+            let name = document.getElementById("input").value;
+            heading.innerHTML = `<b>Heloo ${name}</b>`;
+            
+        }
+    </script>
+</body>
+</html>

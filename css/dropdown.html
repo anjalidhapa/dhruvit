@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .dropdown {
+
+            width: 300px;
+        }
+
+        .dropdown h1 {
+            text-align: center;
+            border: solid 1px;
+            padding: 10px;
+            background-color: aqua;
+        }
+
+        .dropdown .content {
+            display: none;
+            opacity: 0;
+            transition: all 2s;
+            background-color: aquamarine;
+        }
+
+        .content ol {
+            text-align: center;
+            list-style: none;
+        }
+
+        .content ol li {
+            border: solid 1px;
+            padding: 10px;
+        }
+
+        .content ol li:hover {
+            background-color: aqua;
+        }
+
+        .dropdown:hover .content {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <h1>Home</h1>
+        <div class="content">
+            <ol>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+                <li>Link1</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+
+</html>

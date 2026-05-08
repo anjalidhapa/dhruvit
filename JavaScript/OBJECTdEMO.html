@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let student = {
+            id: 1,
+             name: "bhavesh",
+            marks: 100,
+            age: 20,
+            show: function () {
+                alert("hello " + this.name);
+            }
+        }
+        // document.write(student.id);
+        student.show();
+        student.name = "dhruvit";
+        let { name, marks } = student;
+        console.log(student);
+        console.log(name, marks);
+
+    </script>
+
+
+</body>
+
+</html>

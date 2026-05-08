@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      nav {
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 40px;
+        font-size: 25px;
+        color: black;
+      }
+      
+      .menu a {
+        color: black;
+        text-decoration: none;
+        margin: 0 12px;
+        font-size: 16px;
+      }
+      .menu button {
+        color: black;
+        background-image: linear-gradient(
+          to right,
+          rgb(22, 82, 179),
+          rgb(81, 232, 114)
+        );
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+      }
+      .menu button:hover{
+        color: black;
+        background-image: linear-gradient(
+          to right,
+          rgb(19, 236, 23),
+          rgb(81, 232, 114)
+        );
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .mobileimg {
+        margin-left: 650px;
+        position: fixed;
+      }
+      .content h2 {
+        font-size: 50px;
+        margin-top: 100px;
+        margin-left: 150px;
+        font-style: normal;
+      }
+      .content p {
+        margin-top: 20px;
+        margin-left: 100px;
+        font-size: 20px;
+        font-style: italic;
+      }
+      .content button {
+        color: black;
+        background-image: linear-gradient(
+          to right,
+          rgb(22, 82, 179),
+          rgb(81, 232, 114)
+        );
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        margin-left: 100px;
+        margin-top: 15px;
+      }
+      .content button:hover{
+        color: black;
+        background-image: linear-gradient(
+          to right,
+          rgb(19, 236, 23),
+          rgb(81, 232, 114)
+        );
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFDyYMsJXA80wTsW3576os6lufKVvQEUU2L03h2HQZHMmTTA1A"
+          width="60px"
+        />
+        <div class="logo">Digitalbank</div>
+      </div>
+
+      <div class="menu">
+        <a>Home</a>
+        <a>About</a>
+        <a>Contact</a>
+        <a>Blog</a>
+        <a>Careers</a>
+        <button>Request Invite</button>
+      </div>
+    </nav>
+    <div class="mobileimg">
+      <img
+        src="https://www.alkami.com/wp-content/uploads/2025/08/Anticipatory.webp"
+        height="400px"
+        width="100%"
+        alt=""
+      />
+    </div>
+  </body>
+  <div class="content">
+    <h2>Next generation <br />digital banking</h2>
+    <p>
+      Take your financial life online. Your Digitalbank,<br />
+      account will be a one-stop-shop for spending,saving,<br />budgeting,investing,and
+      much more.
+    </p>
+    <button>Request Invite</button>
+  </div>
+</html>

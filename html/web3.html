@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+   <style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+   body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+    }
+
+    body {
+        display: flex;
+    }
+
+    .product {
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .productimg {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 70vh;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .images {
+        display: flex;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    .images img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border: 2px solid #8e7878;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .images img.active {
+        border-color: #ff1408;
+    }
+
+    .details {
+        width: 50%;
+        padding-top: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        color: #e53935;
+        font-size: 26px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .stock {
+        color: green;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        color: #555;
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .label {
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .sizes button {
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        background: #fff;
+        margin-right: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .sizes button.active {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+    }
+
+    .qty {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .qty button {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .cart button {
+        background: #ff6a00;
+        color: #fff;
+        border: none;
+        padding: 14px 26px;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div class="product">
+        <div class="productimg">
+            <img id="mainImg"
+                src="https://rukminim1.flixcart.com/image/600/600/xif0q/shoe/d/r/d/6-5-dd9535-300-6-5-nike-mint-foam-cave-purple-ghost-green-white-original-imahfhvshdugeuce.jpeg?q=70"
+                class="main-img">
+            <div class="images">
+                <img class="active"
+                    src="https://di2ponv0v5otw.cloudfront.net/posts/2023/04/21/644337e817e49cec4dba0594/m_wp_6443380852eee1c815117f12.webp">
+                <img src="https://i.ebayimg.com/images/g/EEMAAeSw39xo7wIh/s-l960.webp">
+                <img
+                    src="https://rukminim2.flixcart.com/image/480/580/xif0q/shoe/v/3/c/-original-imah46k9k2nb3tga.jpeg?q=90">
+                <img src="https://i.ebayimg.com/images/g/zsMAAeSwXlBo7wIg/s-l960.webp">
+            </div>
+        </div>
+
+        <div class="details">
+            <h1>Layasa New Fashion Sneaker Shoes</h1>
+            <div class="price">₹1000</div>
+            <div class="stock">In Stock</div>
+            <div class="description">
+                Step out in style with these trendy fashion sneakers featuring a modern design and comfortable sole.
+            </div>
+
+            <div class="row">
+                <div class="label">Size</div>
+                <div class="sizes">
+                    <button>UK 7</button>
+                    <button>UK 8</button>
+                    <button class="active">UK 9</button>
+                     <button >UK 10</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="label">Quantity</div>
+                <div class="qty">
+                    <button id="minus">-</button>
+                    <span id="qty">1</span>
+                    <button id="plus">+</button>
+                </div>
+            </div>
+
+            <div class="cart">
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

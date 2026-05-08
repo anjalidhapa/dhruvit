@@ -1,0 +1,17 @@
+{
+  "name": "3_project",
+  "version": "1.0.0",
+  "description": "asdfasdf asdf asdf",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cosmos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.2"
+  },
+  "type": "module"
+}

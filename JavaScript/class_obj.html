@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+        <script>
+
+
+                class student
+                {
+                        constructor()
+                        {
+                            console.log("constructor is called");
+                        }
+                        get(no,name)                    
+                        {
+                            this.no=no;
+                            this.name=name;
+                        }
+                        show()
+                        {
+                            console.log(`no:${this.no} and name:${this.name}`);
+                        }
+                }   
+                let s1=new student();
+                s1.get(1,"Dhruvit");
+                s1.show();
+                let s2=new student();
+                s2.get(2,"Dhruv");
+                s2.show();
+
+
+        </script>
+
+    
+</body>
+</html>

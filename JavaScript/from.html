@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Body Styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #fddb92);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Animate Gradient Background */
+    @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Form Container */
+    div {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 300px;
+    }
+
+    /* Inputs Styling */
+    input[type="text"] {
+        width: 100%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: 0.3s;
+        outline: none;
+        font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+        border-color: #7873f5;
+        box-shadow: 0 0 8px rgba(120, 115, 245, 0.5);
+    }
+
+    /* Button Styling */
+    button {
+        width: 100%;
+        padding: 12px 15px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 10px;
+        background: #7873f5;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5e50f0;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(120, 115, 245, 0.4);
+    }
+
+    /* Error Message Styling */
+    #err {
+        font-size: 14px;
+        min-height: 20px;
+        margin-top: 5px;
+    }
+
+    /* Placeholder Styling */
+    ::placeholder {
+        color: #aaa;
+    }
+</style>
+
+<body>
+
+    <div>
+        <form action="" onsubmit="return validate();">
+            <input type="text" id="username" placeholder="Enter username:">
+            <br>
+            <input type="text" id="password" placeholder="Enter password:">
+            <br>
+            <p id="err"></p>
+
+            <button type="submit">Login</button>
+
+        </form>
+    </div>
+    <script>
+        function validate() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            let err = document.getElementById("err");
+            err.style.color = "red";
+            // console.log(user,pass);
+            if (user == "" && pass == "") {
+                err.textContent = "Fill Username and Password";
+                return false;
+            }
+            else if (user == "") {
+                // alert("Please Enter Username");
+                err.textContent = "Fill Username";
+                return false;
+            }
+            else if (pass == "") {
+                err.textContent = "Fill Password";
+                return false;
+            }
+            else {
+                if (pass.length < 8) {
+                    err.textContent = "Password must have 8 letters";
+                    return false;
+                }
+                else {
+                    err.textContent = "";
+                    // alert("login successfully...");
+                    alert("welcome " + user);
+
+
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

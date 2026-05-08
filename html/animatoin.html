@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            height: 100px;
+            position: relative;
+            width: 100px;
+            background-color: rgb(244, 36, 126);
+        }
+
+        .a1 {
+            left: 0px;
+            top: 0px;
+            background-color: rgb(0, 0, 0);
+            animation: ani1 2s infinite;
+        }
+
+        .a2 {
+            left: 200px;
+            top: -100px;
+            background-color: rgb(162, 158, 161);
+            animation: ani2 2s infinite;
+        }
+
+        .a3 {
+            left: 0px;
+            top: 0px;
+            background-color: rgb(160, 154, 154);
+            animation: ani3 2s infinite;
+        }
+
+        .a4 {
+            left: 200px;
+            top: -100px;
+            background-color: rgb(0, 0, 0);
+            animation: ani4 2s infinite;
+        }
+
+        @keyframes ani1 {
+            from {
+                left: 0px;
+                top: 0px;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        @keyframes ani2 {
+            from {
+                left: 200px;
+                top: -100px;
+            }
+
+            to {
+                top: 100px;
+            }
+        }
+
+        @keyframes ani3 {
+            from {
+                left: 0px;
+                top: 0px;
+            }
+
+            to {
+                top: -200px;
+            }
+        }
+
+        @keyframes ani4 {
+            from {
+                left: 200px;
+                top: -100px;
+            }
+
+            to {
+                left: 0px;
+            }
+
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <div class="item a1"></div>
+    <div class="item a2"></div>
+    <div class="item a3"></div>
+    <div class="item a4"></div>
+
+
+</body>
+
+</html>

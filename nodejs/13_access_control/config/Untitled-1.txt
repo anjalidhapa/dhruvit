@@ -1,0 +1,21 @@
+user -> post
+
+1. create user -> crud 
+    user -> name, email, password, ...
+
+    create user model 
+    create user controller 
+    create user routes 
+    test user routes
+    
+    
+    
+2. user login
+    email, password -> token(jwt) -> token will store user email
+    check if user with email exists 
+    check user email and password 
+    generate token(email) -> jwt
+    return token
+
+3. user post -> crud -> only logged in user can create, update, delete their own posts
+    post -> title, content, posted date, ... 
