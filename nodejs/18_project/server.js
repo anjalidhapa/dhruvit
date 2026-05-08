@@ -5,6 +5,7 @@ import UserRouter from './routes/user.router.js';
 import authMiddleware from './middleware/auth.middleware.js';
 import HackathonRouter from './routes/hackathon.router.js';
 import upload from './middleware/upload.js';
+import TeamRouter from './routes/team.router.js';
 
 dotenv.config();
 const app = express();
@@ -19,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/user", UserRouter)
 app.use("/api/hackathon", upload.single(), HackathonRouter)
-// hackathon routes ...
+app.use("/api/team", TeamRouter)
 
 
 app.listen(port, () => {

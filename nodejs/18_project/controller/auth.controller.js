@@ -20,14 +20,15 @@ const login = async (req, res) => {
             return res.status(401).json({ success: false, msg: "email or password not correct " })
         }
 
-        const token = jwt.sign({ userEmail: user.email, userRole: user.role }, process.env.JWT_SECRET);
+        const token = jwt.sign({ userId: user._id, userEmail: user.email, userRole: user.role }, process.env.JWT_SECRET);
+        req.user = user;
 
         res.status(200).json({ success: true, msg: "login successfully ", token })
     } catch (error) {
         console.log("error login", error.message);
 
         res.status(500).json({
-        
+
             success: false,
             error: "Login faild"
         });
