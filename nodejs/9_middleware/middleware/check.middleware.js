@@ -1,4 +1,3 @@
-
 const checkUser = async (req, res, next) => {
     console.log("check middlware called ")
     next(); // Call the next middleware function
