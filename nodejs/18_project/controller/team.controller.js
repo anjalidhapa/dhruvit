@@ -13,7 +13,7 @@ const createTeam = async (req, res) => {
         const team = new Team({
             name,
             description,
-            leFder: decoded.userId
+            leader: decoded.userId
         })
         const savedTeam = await team.save()
 
