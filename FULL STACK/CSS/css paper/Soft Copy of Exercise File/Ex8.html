@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login & Registration</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top right, #3498db, #8e44ad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Auth Container (Flexbox) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Auth Box */
+.auth-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header (Title) */
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input Container */
+.input-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-container label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-container input:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3498db;
+}
+
+/* Switch Link (Login/Signup Switch) */
+.switch-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.switch-link a {
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Login Box Styling */
+.login-box {
+    background: #fff;
+}
+
+/* Register Box Styling */
+.register-box {
+    background: #fff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .auth-box {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div class="auth-container">
+        <div class="auth-box login-box">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn login-btn">Login</button>
+             
+            </form>
+        </div>
+    </div>
+
+   
+   
+    
+    <div class="auth-container">
+        <div class="auth-box register-box">
+            <h2>Register</h2>
+            <form action="#" method="POST">
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn register-btn">Register</button>
+               
+            </form>
+        </div>
+    </div>
+  
+
+</body>
+</html>

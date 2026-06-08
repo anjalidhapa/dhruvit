@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .delete {
+      background-color: #FF4C4C;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .delete:hover {
+      background-color: #ff1a1a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const taskText = taskInput.value.trim();
+      
+      if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      // Create a new list item
+      const li = document.createElement('li');
+
+      // Create a span for the task text
+      const span = document.createElement('span');
+      span.textContent = taskText;
+      span.addEventListener('click', toggleCompletion);
+
+      // Create a delete button
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = "Delete";
+      deleteButton.classList.add('delete');
+      deleteButton.addEventListener('click', deleteTask);
+
+      // Append elements to the list item
+      li.appendChild(span);
+      li.appendChild(deleteButton);
+
+      // Append the list item to the task list
+      document.getElementById('taskList').appendChild(li);
+
+      // Clear the input field after adding
+      taskInput.value = '';
+    }
+
+    // Function to toggle the completion status of a task
+    function toggleCompletion(event) {
+      const task = event.target;
+      task.classList.toggle('completed');
+    }
+
+    // Function to delete a task
+    function deleteTask(event) {
+      const taskItem = event.target.parentElement;
+      taskItem.remove();
+    }
+  </script>
+
+</body>
+</html>

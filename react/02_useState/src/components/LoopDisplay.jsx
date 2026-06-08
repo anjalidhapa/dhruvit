@@ -1,11 +1,12 @@
-const LoopDisplay = ({ name, age }) => {
+const LoopDisplay = ({ id, task }) => {
   return (
     <div>
       <p>
-        name: {name} | age: {age}
+        id: {id} | task: {task}
       </p>
     </div>
   );
 };
+
 
 export default LoopDisplay;

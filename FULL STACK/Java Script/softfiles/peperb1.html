@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Full Name">
+      <div class="error" id="nameError"></div>
+
+      <input type="email" id="email" placeholder="Email">
+      <div class="error" id="emailError"></div>
+
+      <input type="password" id="password" placeholder="Password">
+      <div class="error" id="passwordError"></div>
+
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <div class="error" id="confirmPasswordError"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop form from submitting
+
+      // Clear old errors
+      document.getElementById('nameError').textContent = "";
+      document.getElementById('emailError').textContent = "";
+      document.getElementById('passwordError').textContent = "";
+      document.getElementById('confirmPasswordError').textContent = "";
+
+      // Get values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      let isValid = true;
+
+      // Name check
+      if (name === "") {
+        document.getElementById('nameError').textContent = "Name is required.";
+        isValid = false;
+      }
+
+      // Email check
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        document.getElementById('emailError').textContent = "Email is required.";
+        isValid = false;
+      } else if (!email.match(emailPattern)) {
+        document.getElementById('emailError').textContent = "Enter a valid email.";
+        isValid = false;
+      }
+
+      // Password check
+      if (password === "") {
+        document.getElementById('passwordError').textContent = "Password is required.";
+        isValid = false;
+      } else if (password.length < 6) {
+        document.getElementById('passwordError').textContent = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      // Confirm password check
+      if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+        isValid = false;
+      }
+
+      // If valid
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset(); // Reset the form
+      }
+    });
+  </script>
+
+</body>
+</html>

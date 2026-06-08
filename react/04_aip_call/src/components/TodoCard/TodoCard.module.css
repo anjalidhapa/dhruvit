@@ -1,0 +1,21 @@
+.todoCardStyle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.todoCardWrapper {
+    width: fit-content;
+    min-width: 30%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+ 
+.todoCompleted {
+    background-color: var(--todo-completed);
+    color: var(--todo-completed-txt);
+}
+
+.todoPending {
+    background-color: var(--todo-pending);
+    color: var(--todo-pending-txt);
+}

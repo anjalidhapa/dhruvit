@@ -1,0 +1,217 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Boutique</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,
+        .nav,
+        .news-section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            background-color: #f169c2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .main-banner {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, #ffe4e6, #ffffff);
+            position: relative;
+            background-image: url(https://cdn.connox.com/m/100030/231556/media/Fritz-Hansen/Ikebana-Vase/Fritz-Hansen-Ikebana-Vase-lang-messing-Glas-mit-Blumen-frei.jpg);
+
+            background-size: 25%;
+
+            background-repeat: no-repeat;
+            background-position: bottom right 300px;
+        }
+
+        .main-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            width: 50%;
+        }
+
+        .main-banner p {
+            color: #4a5568;
+            width: 50%;
+            margin-bottom: 30px;
+        }
+
+        .main-banner button {
+            background-color: #f97316;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav a {
+            margin: 0 15px;
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            color: #1a202c;
+        }
+
+        .news-section {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .news-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin: 0px;
+
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .news-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .news-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .news-item p {
+            color: #4a5568;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <button><i class="fas fa-bars"></i> Menu</button>
+            <h1>Flower Boutique</h1>
+        </div>
+        <div>
+            <button><i class="fas fa-search"></i> Search</button>
+            <button><i class="fas fa-heart"></i> Wishlist</button>
+            <button><i class="fas fa-user"></i> Account</button>
+            <button><i class="fas fa-shopping-cart"></i> Cart</button>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="main-banner">
+        <h2>Beautiful Flower Arrangements</h2>
+        <p>Explore our exquisite collection of flower arrangements designed to brighten your space and uplift your
+            spirits. Each arrangement is crafted with care to celebrate the beauty of nature.</p>
+        <button>Shop Now</button>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#">Bouquets</a>
+        <a href="#">Plants</a>
+        <a href="#">Vases</a>
+        <a href="#">Gifts</a>
+        <a href="#">Occasions</a>
+        <a href="#">Sale</a>
+    </nav>
+
+    <!-- Latest News -->
+    <section class="news-section">
+        <h2>Our Latest Products</h2>
+        <div class="news-grid">
+            <!-- News Item 1 -->
+            <div class="news-item">
+                <img src="https://images.unsplash.com/photo-1559779080-6970e0186790?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9zZSUyMGJvdXF1ZXR8ZW58MHx8MHx8fDA%3D"
+                    alt="Roses Bouquet">
+                <h3>Stunning Roses Bouquet</h3>
+                <p>Our fresh roses bouquet is perfect for any occasion. Available for delivery today!</p>
+            </div>
+            <!-- News Item 2 -->
+            <div class="news-item">
+                <img src="https://asset.bloomnation.com/c_pad,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto/v1744267501/vendor/5725/catalog/product/2/0/20231003064009_file_651bb7494e113_651bb77d2df31.jpeg"
+                    alt="Orchid Plant">
+                <h3>Elegant Orchid Plant</h3>
+                <p>Add a touch of elegance to your home with our beautiful orchid plant. Limited stock available!</p>
+            </div>
+            <!-- News Item 3 -->
+            <div class="news-item">
+                <img src="https://arts.mojarto.com/productImages/MA279834/primary/343/MA279834.jpeg" alt="Flower Vase">
+                <h3>Artistic Flower Vase</h3>
+                <p>Enhance your floral displays with our unique flower vases. Perfect for any decor style.</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

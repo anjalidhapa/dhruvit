@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .quote-box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .quote {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quote-box">
+    <div class="quote" id="quoteText">Click the button to get a quote.</div>
+    <button onclick="showRandomQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "The best way to get started is to quit talking and begin doing. – Walt Disney",
+      "Don’t let yesterday take up too much of today. – Will Rogers",
+      "It’s not whether you get knocked down, it’s whether you get up. – Vince Lombardi",
+      "If you are working on something exciting, it will keep you motivated. – Steve Jobs",
+      "Success is not in what you have, but who you are. – Bo Bennett",
+      "Do what you can with all you have, wherever you are. – Theodore Roosevelt"
+    ];
+
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quoteText").textContent = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
