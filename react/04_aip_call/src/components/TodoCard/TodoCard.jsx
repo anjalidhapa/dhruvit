@@ -2,24 +2,24 @@ import styles from "./TodoCard.module.css";
 
 const TodoCard = ({ userId, id, task, completed }) => {
   return (
-    <div className={`${styles.todoCardStyle}`}>
-      <div style={{ padding: "1rem" }}>
+    <div className={`${styles.todoCardStyle}`} style={{ padding: "1rem" }}>
+      <div>
         <div
           className={`${styles.todoCardWrapper}  ${completed ? styles.todoCompleted : styles.todoPending}`}
         >
-          <div className="id-wrapper">
-            <div className="user-id">
-              <div className="user-id-title">User ID</div>
-              <div className="user-id-value">{userId}</div>
+          <div className={styles.idWrapper}>
+            <div className={styles.userId}>
+              <div className={styles.userIdTitle}>User ID</div>
+              <div className={styles.userIdValue}>{userId}</div>
             </div>
-            <div className="id">
-              <div className="id-title">Task ID</div>
-              <div className="id-value">{id}</div>
+            <div className={styles.id}>
+              <div className={styles.idTitle}>Task ID</div>
+              <div className={styles.idValue}>{id}</div>
             </div>
           </div>
 
-          <div className="task">
-            <div className="task-value">{task}</div>
+          <div className={styles.task}>
+            <div className={styles.taskValue}>{task}</div>
           </div>
         </div>
       </div>
@@ -28,3 +28,5 @@ const TodoCard = ({ userId, id, task, completed }) => {
 };
 
 export default TodoCard;
+
+

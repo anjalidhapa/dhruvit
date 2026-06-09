@@ -4,9 +4,11 @@ import connectDB from './config/ConnectDB.js';
 import UserRouter from './routes/user.router.js'
 import authMiddleware from './middleware/auth.middleware.js';
 import PostRouter from './routes/post.router.js';
+import cors from "cors"
 
 dotenv.config();
 const app = express();
+app.use(cors())
 app.use(express.json())
 
 connectDB()

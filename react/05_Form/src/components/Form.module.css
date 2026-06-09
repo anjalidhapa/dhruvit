@@ -1,0 +1,53 @@
+.formStyle {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+}
+
+.PasswordWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Email,
+.Password {
+    display: flex;
+    flex-direction: column;
+}
+
+.EmailTitle,
+.PasswordTitle {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.Email input,
+.Password input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #222;
+    color: #fff;
+}
+
+
+
+.ButtonWrapper {
+    margin-top: 20px;
+}
+
+.Button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a73e8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

@@ -1,11 +1,11 @@
-import React from "react";
-import FetchTodo from "./components/FetchTodo";
+// import FetchTodo from "./components/FetchTodo";
 import AxiosTodo from "./components/AxiosTodo";
 
 const App = () => {
   return (
     <div>
-      <FetchTodo />
+      {/* <FetchTodo /> */}
+
       <AxiosTodo />
     </div>
   );

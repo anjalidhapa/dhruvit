@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import TodoCard from "./TodoCard/TodoCard";
 
-const AxiosTodo = () => {
-  const [todos, setTodos] = useState([]);
-  const fetchTodoTask = async () => {
+  const AxiosTodo = () => {
+    const [todos, setTodos] = useState([]);
+    const fetchTodoTask = async () => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
       .then((response) => {
@@ -23,7 +23,15 @@ const AxiosTodo = () => {
     console.log(todos);
   }, [todos]);
   return (
-    <div>
+    <div
+      className="demo 111"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "1rem",
+        justifyContent: "space-between",
+      }}
+    >
       {todos.map((todo) => (
         <TodoCard
           key={todo.id}

@@ -1,15 +1,14 @@
 .todoCardStyle {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 30%;
 }
+
 .todoCardWrapper {
-    width: fit-content;
-    min-width: 30%;
+    height: 30vh;
+    width: 100%;
     padding: 1rem;
     border-radius: 0.25rem;
 }
- 
+
 .todoCompleted {
     background-color: var(--todo-completed);
     color: var(--todo-completed-txt);
@@ -18,4 +17,22 @@
 .todoPending {
     background-color: var(--todo-pending);
     color: var(--todo-pending-txt);
+}
+
+.idWrapper,
+.userId,
+.id {
+    display: flex;
+    align-items: center;
+}
+
+.userId,
+.id {
+    gap: 0.5rem;
+    padding: 2rem 0;
+    height: 15vh;
+}
+
+.idWrapper {
+    gap: 1rem;
 }
